@@ -1,0 +1,423 @@
+:root {
+  --paper: #FBF9F6;
+  --ink: #1B1F23;
+  --ink-soft: #52585F;
+  --rule: #DCD7CE;
+  --code-surface: #F1EEE7;
+  --git-orange: #F14E32;
+  --git-orange-dark: #C93C24;
+  --terminal-green: #1F7A4C;
+  --stripe: #F3EFE6;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+header {
+  padding: 3.5rem 1.5rem 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--rule);
+}
+
+header > h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.75rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+
+header > p {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+
+nav {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+nav > h2 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 0.85rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+}
+
+nav li:first-of-type {
+  padding-left: 0;
+}
+
+
+nav a {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+
+nav a::before {
+  content: "$ ";
+  color: var(--git-orange);
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: var(--git-orange-dark);
+  border-bottom-color: var(--git-orange-dark);
+}
+
+nav a:focus {
+  outline: 2px solid var(--git-orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+nav a:active {
+  color: var(--terminal-green);
+}
+
+
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+main > section {
+  padding: 2.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+main > section:last-of-type {
+  border-bottom: none;
+}
+
+
+main section h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+
+section > article {
+  margin-bottom: 1.75rem;
+}
+
+section > article:first-of-type {
+  margin-top: 0.25rem;
+}
+
+section > article:last-of-type {
+  margin-bottom: 0;
+}
+
+article h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+
+main p {
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+}
+
+main code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--code-surface);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--git-orange-dark);
+}
+
+main ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+}
+
+main li {
+  margin-bottom: 0.5rem;
+  color: var(--ink-soft);
+}
+
+main img {
+  max-width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+thead th {
+  text-align: left;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+tbody td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+tbody td:first-child {
+  font-family: var(--font-mono);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+
+tbody tr:nth-of-type(even) {
+  background: var(--stripe);
+}
+
+tbody tr:hover {
+  background: var(--code-surface);
+}
+
+
+
+form {
+  margin-top: 1.5rem;
+}
+
+form > div {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+
+label ~ input,
+label ~ textarea {
+  width: 100%;
+  max-width: 420px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+
+label ~ textarea {
+  max-width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  font-family: var(--font-body);
+}
+
+
+
+input[type="email"] {
+  border-color: #B9C4CF;
+}
+
+input[required],
+textarea[required] {
+  border-left: 3px solid var(--git-orange);
+}
+
+input[pattern] {
+  font-family: var(--font-mono);
+}
+
+label ~ input:focus,
+label ~ textarea:focus {
+  outline: none;
+  border-color: var(--git-orange);
+  box-shadow: 0 0 0 3px rgba(241, 78, 50, 0.15);
+}
+
+button[type="submit"] {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--ink);
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: var(--git-orange-dark);
+}
+
+button[type="submit"]:focus {
+  outline: 2px solid var(--git-orange);
+  outline-offset: 2px;
+}
+
+button[type="submit"]:active {
+  background: var(--terminal-green);
+}
+
+
+
+aside {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+aside > h2 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+}
+
+aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside li {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+
+aside li:first-of-type {
+  padding-top: 0;
+}
+
+aside li:last-of-type {
+  border-bottom: none;
+}
+
+
+
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+
+
+@media (max-width: 600px) {
+  header {
+    padding: 2.5rem 1.25rem 1.5rem;
+  }
+
+  header > h1 {
+    font-size: 2.1rem;
+  }
+
+  nav, main, aside, footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  label ~ input,
+  label ~ textarea {
+    max-width: 100%;
+  }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

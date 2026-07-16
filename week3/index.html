@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Cheat Sheet - Technical Documentation</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <header>
+    <h1>Git Cheat Sheet</h1>
+    <p>A quick reference guide for common Git commands and workflows.</p>
+  </header>
+
+
+  <nav aria-label="Table of contents">
+
+    <h2>Contents</h2>
+
+
+    <ul>
+    
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#branching">Branching</a></li>
+      <li><a href="#committing">Committing Changes</a></li>
+      <li><a href="#remote">Working with Remotes</a></li>
+      <li><a href="#command-table">Command Reference Table</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+    
+    </ul>
+
+
+  </nav>
+
+  <main>
+
+
+    <section id="getting-started">
+
+      <h2>Getting Started</h2>
+
+
+      <article>
+
+        <h3>Initializing a Repository</h3>
+        <p>Use <code>git init</code> inside a project folder to start tracking it with Git. This creates a hidden <code>.git</code> directory that stores all version history.</p>
+
+
+        <ul>
+
+          <li><code>git init</code> &mdash; start tracking the current folder with Git</li>
+          <li><code>git init &lt;folder-name&gt;</code> &mdash; create a new folder and initialize it as a repository</li>
+        
+        </ul>
+
+
+        <img src="git-init-diagram.png" alt="Diagram showing a folder becoming a Git repository after running git init">
+      
+      </article>
+
+      <article>
+        <h3>Cloning a Repository</h3>
+        <p>Use <code>git clone &lt;url&gt;</code> to copy an existing repository from a remote source, such as GitHub, to your local machine.</p>
+
+        <ul>
+
+          <li><code>git clone &lt;url&gt;</code> &mdash; copy a remote repository to your machine</li>
+          <li><code>git clone &lt;url&gt; &lt;folder-name&gt;</code> &mdash; clone into a custom folder name</li>
+          <li><code>git clone --depth 1 &lt;url&gt;</code> &mdash; clone only the most recent commit (shallow clone)</li>
+        
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <section id="branching">
+
+      <h2>Branching</h2>
+
+
+      <article>
+
+        <p>Branches let you work on features or fixes without affecting the main codebase.</p>
+
+
+        <ul>
+
+          <li><code>git branch</code> &mdash; list all local branches</li>
+          <li><code>git branch &lt;name&gt;</code> &mdash; create a new branch</li>
+          <li><code>git checkout &lt;name&gt;</code> &mdash; switch to an existing branch</li>
+          <li><code>git checkout -b &lt;name&gt;</code> &mdash; create and switch to a new branch in one step</li>
+          <li><code>git branch -d &lt;name&gt;</code> &mdash; delete a branch that's already merged</li>
+          <li><code>git branch -D &lt;name&gt;</code> &mdash; force-delete a branch, merged or not</li>
+        
+        </ul>
+     
+      </article>
+    
+    </section>
+
+
+   
+  <section id="committing">
+    
+    <h2>Committing Changes</h2>
+
+
+      <article>
+
+        <p>Stage and save snapshots of your work as you go. Good commit messages are short, imperative, and describe what changed.</p>
+
+
+        <ul>
+
+          <li><code>git add &lt;file&gt;</code> &mdash; stage a specific file</li>
+          <li><code>git add .</code> &mdash; stage all changed files</li>
+          <li><code>git commit -m "message"</code> &mdash; save a snapshot with a message</li>
+          <li><code>git commit -am "message"</code> &mdash; stage all tracked files and commit in one step</li>
+          <li><code>git commit --amend</code> &mdash; edit the most recent commit</li>
+          <li><code>git reset &lt;file&gt;</code> &mdash; unstage a file without losing changes</li>
+        
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <section id="remote">
+
+      <h2>Working with Remotes</h2>
+
+
+      <article>
+
+        <p>Connect and sync your local repository with a remote source such as GitHub.</p>
+
+
+        <ul>
+          
+          <li><code>git remote add origin &lt;url&gt;</code> &mdash; link a local repository to a remote one</li>
+          <li><code>git remote -v</code> &mdash; view the remotes currently configured</li>
+          <li><code>git push -u origin main</code> &mdash; push commits and set the upstream branch</li>
+          <li><code>git push</code> &mdash; push commits after the upstream is already set</li>
+          <li><code>git pull</code> &mdash; fetch and merge changes from the remote</li>
+          <li><code>git fetch</code> &mdash; download changes from the remote without merging</li>
+        
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <section id="command-table">
+
+      <h2>Command Reference Table</h2>
+
+      <table>
+
+        <caption>Common Git Commands</caption>
+
+        <thead>
+
+          <tr>
+
+            <th scope="col">Command</th>
+            <th scope="col">Purpose</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td><code>git status</code></td>
+            <td>Shows the current state of the working directory and staging area</td>
+
+          </tr>
+
+          <tr>
+
+            <td><code>git log</code></td>
+            <td>Displays commit history</td>
+
+          </tr>
+
+          <tr>
+
+            <td><code>git diff</code></td>
+            <td>Shows unstaged changes between the working directory and the last commit</td>
+
+          </tr>
+          <tr>
+
+            <td><code>git merge &lt;branch&gt;</code></td>
+            <td>Merges the specified branch into the current branch</td>
+          
+          </tr>
+
+          <tr>
+
+            <td><code>git stash</code></td>
+            <td>Temporarily shelves uncommitted changes so you can switch context</td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td><code>git stash pop</code></td>
+            <td>Reapplies the most recently stashed changes</td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td><code>git rm &lt;file&gt;</code></td>
+            <td>Removes a file from the working directory and stages the removal</td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td><code>git revert &lt;commit&gt;</code></td>
+            <td>Creates a new commit that undoes the changes from a previous commit</td>
+          
+          </tr>
+          
+          <tr>
+          
+            <td><code>git rebase &lt;branch&gt;</code></td>
+            <td>Reapplies commits from the current branch on top of another branch</td>
+          
+          </tr>
+        
+        </tbody>
+      
+      </table>
+    
+    
+    </section>
+
+    
+    <section id="feedback">
+    
+      <h2>Feedback</h2>
+    
+      <article>
+    
+        <p>Found this guide helpful, or spotted something missing? Let us know below.</p>
+
+    
+        <form action="#" method="post">
+    
+          <div>
+            <label for="name">Full Name</label><br>
+    
+            <input type="text" id="name" name="name" placeholder="e.g. Jane Doe" required minlength="2">
+    
+          </div>
+
+    
+          <div>
+    
+            <label for="email">Email Address</label><br>
+    
+            <input type="email" id="email" name="email" placeholder="e.g. jane@example.com" required>
+    
+          </div>
+
+    
+          <div>
+    
+            <label for="rating">Rating (1-5)</label><br>
+    
+            <input type="text" id="rating" name="rating" placeholder="e.g. 5" required pattern="[1-5]" title="Enter a single number from 1 to 5">
+    
+          </div>
+
+
+          
+          <div>
+          
+            <label for="comments">Comments</label><br>
+          
+            <textarea id="comments" name="comments" placeholder="Share your thoughts..." required minlength="10"></textarea>
+          
+          </div>
+
+
+          
+          <button type="submit">Submit Feedback</button>
+        
+        </form>
+      
+      
+      </article>
+    
+    
+    </section>
+
+  
+  </main>
+
+  
+  <aside>
+  
+    <h2>Related Resources</h2>
+  
+    <ul>
+  
+      <li>Official Git Documentation</li>
+  
+      <li>GitHub Docs</li>
+  
+      <li>Pro Git Book (free online)</li>
+  
+    </ul>
+  
+  </aside>
+
+
+  
+  <footer>
+  
+    <p>&copy; 2026 Git Cheat Sheet Documentation. Built for educational purposes.</p>
+  
+  </footer>
+
+
+
+</body>
+
+</html>
