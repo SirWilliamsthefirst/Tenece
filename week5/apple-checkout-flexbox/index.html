@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+
+  <title>Device Shop Checkout | devChallenges.io</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="checkout">
+
+    <!-- ============ Product Summary Section ============ -->
+    <section class="summary" aria-label="Order summary">
+      <h1 class="summary__heading">Checkout</h1>
+      <p class="summary__count">3 items</p>
+
+      <ul class="product-list">
+        <li class="product">
+          <img class="product__image" src="resources/Gold.png" srcset="resources/Gold.png 1x, resources/Gold@2x.png 2x" alt="Gold iPhone 12 Pro">
+          <div class="product__info">
+            <p class="product__name">iPhone 12 Pro</p>
+            <p class="product__variant">Golden</p>
+          </div>
+          <div class="product__right">
+            <p class="product__price">$999.00</p>
+            <p class="product__qty">x 1</p>
+          </div>
+        </li>
+
+        <li class="product">
+          <img class="product__image" src="resources/Apple-watch.png" srcset="resources/Apple-watch.png 1x, resources/Apple-watchx2.png 2x" alt="Blue Apple Watch">
+          <div class="product__info">
+            <p class="product__name">Apple Watch</p>
+            <p class="product__variant">Blue</p>
+          </div>
+          <div class="product__right">
+            <p class="product__price">$399.00</p>
+          </div>
+        </li>
+
+        <li class="product">
+          <img class="product__image" src="resources/iMac.png" srcset="resources/iMac.png 1x, resources/iMac@2x.png 2x" alt="Green iMac">
+          <div class="product__info">
+            <p class="product__name">iMac</p>
+            <p class="product__variant">Green</p>
+          </div>
+          <div class="product__right">
+            <p class="product__price">$1199.00</p>
+          </div>
+        </li>
+      </ul>
+
+      <form class="coupon" novalidate>
+        <input type="text" class="coupon__input" placeholder="Enter coupon code" aria-label="Coupon code">
+        <button type="submit" class="coupon__button">Apply Coupon</button>
+      </form>
+
+      <dl class="totals">
+        <div class="totals__row">
+          <dt>Sub total</dt>
+          <dd>$2597.00</dd>
+        </div>
+        <div class="totals__row">
+          <dt>Tax</dt>
+          <dd>$623.28</dd>
+        </div>
+        <div class="totals__row totals__row--total">
+          <dt>Total</dt>
+          <dd>$3220.28</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ============ Contact / Checkout Form Section ============ -->
+    <section class="checkout-form" aria-label="Contact information">
+      <h2 class="checkout-form__heading">Contact Information</h2>
+
+      <form novalidate>
+        <div class="field">
+          <label for="fullName">First &amp; Last name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter first &amp; last name" required minlength="2">
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter email address" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+              <option value="FI" selected>Finland</option>
+              <option value="NG">Nigeria</option>
+              <option value="US">United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="postalCode">Postal Code</label>
+            <input type="text" id="postalCode" name="postalCode" placeholder="00270" required pattern="[0-9A-Za-z\- ]{3,10}">
+          </div>
+        </div>
+
+        <button type="submit" class="checkout-form__submit">Continue</button>
+      </form>
+    </section>
+
+  </div>
+
+</body>
+</html>

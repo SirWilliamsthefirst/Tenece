@@ -1,0 +1,72 @@
+/* ===================================================================
+   Device Shop Checkout — Bootstrap Implementation
+   Bootstrap handles layout/spacing/grid. This file only covers
+   brand-specific visuals Bootstrap utilities can't express:
+   the dark background image panel and Apple-blue accent color.
+=================================================================== */
+
+body {
+  font-family: -apple-system, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.checkout-row {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.summary {
+  background: #14141A url("resources/background-image.png") center/cover no-repeat;
+  color: #FFFFFF;
+}
+
+.product-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.coupon-input {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+}
+
+.coupon-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.coupon-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: none;
+}
+
+.coupon-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.continue-btn {
+  background-color: #0071E3;
+  border-color: #0071E3;
+}
+
+.continue-btn:hover {
+  background-color: #0058B8;
+  border-color: #0058B8;
+}
+
+/* Desktop: card elevation for the whole checkout, matching the flexbox version */
+@media (min-width: 1024px) {
+  .checkout-row {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    min-height: auto !important;
+  }
+}

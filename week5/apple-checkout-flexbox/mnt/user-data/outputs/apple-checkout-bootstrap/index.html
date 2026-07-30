@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+
+  <title>Device Shop Checkout | devChallenges.io</title>
+
+  <!-- Bootstrap via CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container-fluid p-0">
+    <div class="row g-0 min-vh-100 checkout-row">
+
+      <!-- ============ Product Summary Section ============ -->
+      <section class="col-12 col-lg-6 summary d-flex flex-column p-4 p-md-5" aria-label="Order summary">
+        <h1 class="fw-bold mb-1">Checkout</h1>
+        <p class="text-white-50 small mb-4">3 items</p>
+
+        <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+          <li class="d-flex align-items-center gap-3">
+            <img src="resources/Gold.png" srcset="resources/Gold.png 1x, resources/Gold@2x.png 2x" alt="Gold iPhone 12 Pro" class="product-img flex-shrink-0">
+            <div class="flex-grow-1">
+              <p class="fw-semibold mb-0">iPhone 12 Pro</p>
+              <p class="text-white-50 small mb-0">Golden</p>
+            </div>
+            <div class="text-end flex-shrink-0">
+              <p class="fw-semibold mb-0">$999.00</p>
+              <p class="text-white-50 small mb-0">x 1</p>
+            </div>
+          </li>
+
+          <li class="d-flex align-items-center gap-3">
+            <img src="resources/Apple-watch.png" srcset="resources/Apple-watch.png 1x, resources/Apple-watchx2.png 2x" alt="Blue Apple Watch" class="product-img flex-shrink-0">
+            <div class="flex-grow-1">
+              <p class="fw-semibold mb-0">Apple Watch</p>
+              <p class="text-white-50 small mb-0">Blue</p>
+            </div>
+            <div class="text-end flex-shrink-0">
+              <p class="fw-semibold mb-0">$399.00</p>
+            </div>
+          </li>
+
+          <li class="d-flex align-items-center gap-3">
+            <img src="resources/iMac.png" srcset="resources/iMac.png 1x, resources/iMac@2x.png 2x" alt="Green iMac" class="product-img flex-shrink-0">
+            <div class="flex-grow-1">
+              <p class="fw-semibold mb-0">iMac</p>
+              <p class="text-white-50 small mb-0">Green</p>
+            </div>
+            <div class="text-end flex-shrink-0">
+              <p class="fw-semibold mb-0">$1199.00</p>
+            </div>
+          </li>
+        </ul>
+
+        <form class="d-flex flex-column flex-md-row gap-2 mb-4" novalidate>
+          <input type="text" class="form-control coupon-input" placeholder="Enter coupon code" aria-label="Coupon code">
+          <button type="submit" class="btn coupon-btn text-nowrap">Apply Coupon</button>
+        </form>
+
+        <dl class="mt-auto border-top border-light border-opacity-25 pt-3 mb-0">
+          <div class="d-flex justify-content-between text-white-50 small mb-2">
+            <dt class="fw-normal">Sub total</dt>
+            <dd class="mb-0">$2597.00</dd>
+          </div>
+          <div class="d-flex justify-content-between text-white-50 small mb-2">
+            <dt class="fw-normal">Tax</dt>
+            <dd class="mb-0">$623.28</dd>
+          </div>
+          <div class="d-flex justify-content-between fw-bold fs-5 border-top border-light border-opacity-25 pt-3 mt-1">
+            <dt>Total</dt>
+            <dd class="mb-0">$3220.28</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- ============ Contact / Checkout Form Section ============ -->
+      <section class="col-12 col-lg-6 bg-white d-flex flex-column justify-content-center p-4 p-md-5" aria-label="Contact information">
+        <h2 class="fw-bold mb-4">Contact Information</h2>
+
+        <form novalidate>
+          <div class="mb-3">
+            <label for="fullName" class="form-label fw-semibold small">First &amp; Last name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter first &amp; last name" required minlength="2">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold small">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+          </div>
+
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-md-6">
+              <label for="country" class="form-label fw-semibold small">Country</label>
+              <select id="country" name="country" class="form-select" required>
+                <option value="FI" selected>Finland</option>
+                <option value="NG">Nigeria</option>
+                <option value="US">United States</option>
+                <option value="GB">United Kingdom</option>
+                <option value="CA">Canada</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="postalCode" class="form-label fw-semibold small">Postal Code</label>
+              <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="00270" required pattern="[0-9A-Za-z\- ]{3,10}">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold continue-btn">Continue</button>
+        </form>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>
